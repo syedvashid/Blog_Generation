@@ -1,0 +1,15 @@
+from langchain_groq import ChatGroq
+import os 
+from dotenv import load_dotenv
+
+class GroqLLm:
+    def __init__(self):
+        load_dotenv()
+
+    def get_llm(self):
+        try:
+            os.environ["GROQ_API"] = self.groq_api_key=os.getenv("GROQ_API")
+            llm = ChatGroq(api_key = self.groq_api_key,model = "llama-3.1-8b-instant")
+            return llm
+        except Exception as e:
+            raise ValueError(f"Error initializing Groq LLM: {e}")
