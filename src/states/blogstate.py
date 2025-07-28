@@ -1,5 +1,5 @@
 from typing import TypedDict
-from pydentic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 class Blog(BaseModel):
     title: str = Field( description="The title of the blog post")
