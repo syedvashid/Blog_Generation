@@ -28,3 +28,11 @@ class GraphBuilder:
            self.build_topic_graph()
         
         return self.graph.compile()
+    
+    # ?Blew code is for the langsmith lanffraph studio
+
+llm=GroqLLm().get_llm()
+
+# get the graph
+graph_builder =GraphBuilder(llm)
+graph_builder.build_topic_graph().compile()
