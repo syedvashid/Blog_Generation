@@ -14,7 +14,7 @@ os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 @app.post("/blogs")
 async def create_blogs(request:Request):
     
-    data=await request.json()
+    data=await request.json() 
     topic= data.get("topic","")
     language = data.get("language", '')
     print(language)
